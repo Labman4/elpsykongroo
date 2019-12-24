@@ -238,6 +238,7 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.0)
+    wdm (0.1.1)
     zeitwerk (2.2.2)
 
 PLATFORMS
@@ -247,6 +248,7 @@ DEPENDENCIES
   github-pages (~> 203)
   jekyll-sitemap
   pygments.rb
+  wdm (>= 0.1.0)
 
 BUNDLED WITH
    2.1.1
