@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="/assets/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css">
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
+<!--    <link rel="stylesheet" href="css/bootstrap-table-pagejump.css">
+    <link rel="stylesheet" href="css/bootstrap-table-jumpto.css">
+    <script src="js/bootstrap-table-jumpto.js"></script>
+    <script src="js/bootstrap-table-pagejump.js"></script>-->
+    <style scoped>
+        body {
+            position: relative;
+        }
+        ul.nav-pills {
+            top: 180px;
+            position: fixed;
+        }
+        div.col-8 div {
+            height: 500px;
+        }
+        /*.jumpto input {
+            height: 31px;
+            width: 50px;
+            margin-left: 5px;
+            margin-right: 5px;
+            text-align: center;
+            display: inline-block;
+        }*/
+
+       .dropdown:hover>.dropdown-menu{
+            display:block;
+        }
+        .dropdown>.dropdown-toggle:active{
+            pointer-events:none;
+        }
+        .input-group {
+            position: relative;
+            left: 30px;
+        }
+      /*.nav
+       li:hover
+       .dropdown-menu {display: block;}*/
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1"> <!--滚动监听头-->
+<div class="row">
+   <div class="text-right">
+        <input type="button" value="登录" id="login" class="rounded"  data-toggle="modal" data-target="#myModal">
+        <input type="button" value="注册" id="register" class="rounded">
+   </div>
+</div>
+   <div class="modal fade" id="myModal">
+       <div class="modal-dialog">
+           <div class="modal-content">
+
+               <!-- 模态框头部 -->
+               <div class="modal-header">
+                   <h4 class="modal-title">登录</h4>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+
+               <!-- 模态框主体 -->
+               <div class="modal-body">
+                   <form action="Serverlet" method="post" id="form">
+                       账号	<input type="text" id="user" name="admin"/><br/>
+                       密码	<input type="password" id="pwd" name="password"/><br/>
+                       <button type="button" id="btn">登录</button>
+                       <span id="msg"></span>
+
+                   </form>
+               </div>
+
+               <!-- 模态框底部 -->
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+               </div>
+
+           </div>
+       </div>
+   </div> <!-- 模态框 -->
+  <!-- <nav class="navbar navbar-default" role="navigation">
+       <div class="container-fluid">
+           <div class="navbar-header">
+               <a class="navbar-brand" href="#"></a>
+           </div>
+           <div>
+               <form class="navbar-form navbar-left" role="search">
+                   <div class="form-group">
+                       <input type="text" class="form-control" placeholder="Search">
+                   </div>
+                   <button type="submit" class="btn btn-default">提交</button>
+               </form>
+           </div>
+       </div>
+   </nav>--><!--搜索框-->
+<nav class="navbar navbar-expand-sm bg-white navbar-light">
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="#" data-toggle="tab">首页</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link data-toggle" data-toggle="dropdown" href="#"></a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#timetable"></a>
+            <a class="dropdown-item" href="#"></a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#timetable"></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+    </li>
+
+</ul><!--下拉-->
+   <!-- <form class="navbar-form form-inline">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search"/>
+            <button class="btn btn-group" type="submit">search</button>
+        </div>
+
+    </form>-->
+</nav>
+<div class="container" >
+       <div class="row" id="sec">
+           <nav class="col-sm-1 col-4" id="myScrollspy">
+               <ul class="nav nav-pills nav-stacked">
+                   <li class="nav-item">
+                       <a class="nav-link " href="#section1"id="1"></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link " href="#section2"id="2"></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link " href="#section3"id="3"></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link active" href="#section4"id="4"></a>
+                   </li>
+               </ul>
+           </nav>
+           <div class="col-sm-9 col-8">
+               <div id="section1">
+                   <h3 align="left"></h3>
+                   <p></p>
+               </div>
+               <div id="section2">
+                   <h3 align="left"></h3>
+                   <p></p>
+               </div>
+               <div id="section3">
+                   <h3 align="left"></h3>
+                   <p></p>
+               </div>
+               <div id="section4">
+                   <h3 align="left"></h3>
+                   <p></p>
+               </div>
+           </div>
+       </div>
+   </div><!--滚动监听-->
+
+    <!--<div>
+         <nav class="navbar  navbar-expand-sm bg-white navbar-light" role="tablelist"id="timetable">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="navbar-brand"></a>
+                        <img src="" alt="bili" style="width:30px;height:30px;">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">日程</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#monday"data-toggle="tab">周一</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tuseday"data-toggle="tab">周二</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#wednesday"data-toggle="tab">周三</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#thursday"data-toggle="tab">周四</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#friday"data-toggle="tab">周五</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#saturday"data-toggle="tab">周六</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sunday"data-toggle="tab">周日</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="time"href="#"><input type="button"value="时间表"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+<div class="tab-content">
+    <div class="container tab-pane"id="monday">
+        <p>1</p>
+    </div>
+    <div class="container tab-pane"id="tuseday">
+        <p>2</p>
+    </div>
+    <div class="container tab-pane"id="wednesday">
+         <p>3</p>
+    </div>
+    <div class="container tab-pane"id="thursday">
+        <p>4</p>
+    </div>
+    <div class="container tab-pane"id="friday">
+         <p>5</p>
+    </div>
+    <div class="container tab-pane"id="saturday">
+        <p>6</p>
+    </div>
+    <div class="container tab-pane"id="sunday">
+        <p>7</p>
+    </div>
+</div>&lt;!&ndash;下拉跳转&ndash;&gt;-->
+<div>
+    <table id="my_table_id"
+           data-url="data/url.json"
+           data-id-field="id"
+           data-show-jumpto="true">
+        <thead>
+        <tr>
+            <th class="col-md-1" data-field="id" data-sortable="true" data-align="center"></th>
+            <th class="col-md-4" data-field="name" data-editable="true"></th>
+            <th class="col-md-7" data-field="description" data-editable="true" data-editable-emptytext="Custom empty text."></th>
+        </tr>
+        </thead>
+    </table>
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="">上一页</a></li>
+        <li class="page-item"><a class="page-link" href="">1</a></li>
+        <li class="page-item"><a class="page-link" href="">2</a></li>
+        <li class="page-item"><a class="page-link" href="">3</a></li>
+        <li class="page-item"><a class="page-link" href="">...</a></li>
+        <li class="page-item"><a class="page-link" href="">下一页</a></li>
+        <li class="page-item"><input type="text" id="txt"><button type="button">跳转</button></li>
+    </ul>
+</div><!--分页-->
+</body>
+<script>
+   /* $(document).ready(function(){
+        $(document).off('click.bs.dropdown.data-api');
+    });*/
+  /*  $(document).ready(function(){
+        dropdownOpen();
+    });*/
+ /*$(function () {
+        $(".dropdown").mouseover(function () {
+            $(this).addClass("open");
+        });
+
+        $(".dropdown").mouseleave(function(){
+            $(this).removeClass("open");
+        })
+    })*/
+
+   /* function dropdownOpen() {
+
+        var $dropdownLi = $('li.dropdown');
+
+        $dropdownLi.mouseover(function() {
+            $(this).addClass('open');
+        }).mouseout(function() {
+            $(this).removeClass('open');
+        });
+    }*/
+
+    $("#btn").click(function(){
+        var u=$("#user").val();
+        var p=$("#pwd").val();
+        if(isEmpty(u)){
+            $("#msg").html("账号不能为空");
+            return;
+        }
+        if(isEmpty(p)){
+            $("#msg").html("密码不能为空");
+            return;
+        }
+        $("#form").submit();
+
+    });
+    function isEmpty(s){
+        if(s==null||s.trim()=="")
+            return true;
+        return false;
+    }
+</script>
+</html>
