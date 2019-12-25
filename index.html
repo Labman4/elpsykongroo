@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="/assets/js/jquery-3.4.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,maximum-scale=1.0, user-scalable=no">
+    <script src="/assets/js/jquery-1.8.3.min.js"></script>
     <link rel="stylesheet" href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css">
     <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
-<!--    <link rel="stylesheet" href="css/bootstrap-table-pagejump.css">
-    <link rel="stylesheet" href="css/bootstrap-table-jumpto.css">
-    <script src="js/bootstrap-table-jumpto.js"></script>
-    <script src="js/bootstrap-table-pagejump.js"></script>-->
     <style scoped>
         body {
             position: relative;
@@ -19,128 +15,56 @@
             top: 180px;
             position: fixed;
         }
-        div.col-8 div {
-            height: 500px;
-        }
-        /*.jumpto input {
-            height: 31px;
-            width: 50px;
-            margin-left: 5px;
-            margin-right: 5px;
-            text-align: center;
-            display: inline-block;
-        }*/
-
-       .dropdown:hover>.dropdown-menu{
+        .dropdown:hover>.dropdown-menu{
             display:block;
         }
         .dropdown>.dropdown-toggle:active{
             pointer-events:none;
         }
-        .input-group {
-            position: relative;
-            left: 30px;
+        .text{
+            background-image: url(assets/images/zmcselect.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
         }
-      /*.nav
-       li:hover
-       .dropdown-menu {display: block;}*/
     </style>
 </head>
-
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="1"> <!--滚动监听头-->
-<div class="row">
-   <div class="text-right">
-        <input type="button" value="登录" id="login" class="rounded"  data-toggle="modal" data-target="#myModal">
-        <input type="button" value="注册" id="register" class="rounded">
-   </div>
-</div>
-   <div class="modal fade" id="myModal">
-       <div class="modal-dialog">
-           <div class="modal-content">
-
-               <!-- 模态框头部 -->
-               <div class="modal-header">
-                   <h4 class="modal-title">登录</h4>
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-               </div>
-
-               <!-- 模态框主体 -->
-               <div class="modal-body">
-                   <form action="Serverlet" method="post" id="form">
-                       账号	<input type="text" id="user" name="admin"/><br/>
-                       密码	<input type="password" id="pwd" name="password"/><br/>
-                       <button type="button" id="btn">登录</button>
-                       <span id="msg"></span>
-
-                   </form>
-               </div>
-
-               <!-- 模态框底部 -->
-               <div class="modal-footer">
-                   <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-               </div>
-
-           </div>
-       </div>
-   </div> <!-- 模态框 -->
-  <!-- <nav class="navbar navbar-default" role="navigation">
-       <div class="container-fluid">
-           <div class="navbar-header">
-               <a class="navbar-brand" href="#"></a>
-           </div>
-           <div>
-               <form class="navbar-form navbar-left" role="search">
-                   <div class="form-group">
-                       <input type="text" class="form-control" placeholder="Search">
-                   </div>
-                   <button type="submit" class="btn btn-default">提交</button>
-               </form>
-           </div>
-       </div>
-   </nav>--><!--搜索框-->
-<nav class="navbar navbar-expand-sm bg-white navbar-light">
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link active" href="#" data-toggle="tab">首页</a>
-    </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link data-toggle" data-toggle="dropdown" href="#"></a>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#"></a>
-            <a class="dropdown-item" href="#"></a>
-            <a class="dropdown-item" href="#timetable"></a>
-            <a class="dropdown-item" href="#"></a>
-        </div>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#timetable"></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-    </li>
-
-</ul><!--下拉-->
-   <!-- <form class="navbar-form form-inline">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search"/>
-            <button class="btn btn-group" type="submit">search</button>
-        </div>
-
-    </form>-->
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1" > <!--滚动监听头-->
+<nav class="navbar navbar-default navbar-expand-sm bg-white navbar-light" role="navigation">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#" data-toggle="tab">首页</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link data-toggle" data-toggle="dropdown" href="#">类别</a>
+            <div class="dropdown-menu">
+                <a class="" href="#">日常</a>
+                <a class="dropdown-item" href="#">特殊</a>
+                <a class="dropdown-item" href="#">随笔</a>
+                <a class="dropdown-item" href="#">小结</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">今</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">天</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">又</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">没</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">吃</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">药</a>
+        </li>
+    </ul>
 </nav>
-<div class="container" >
+<!--<div class="container" >
        <div class="row" id="sec">
            <nav class="col-sm-1 col-4" id="myScrollspy">
                <ul class="nav nav-pills nav-stacked">
@@ -177,7 +101,9 @@
                </div>
            </div>
        </div>
-   </div><!--滚动监听-->
+   </div>&lt;!&ndash;滚动监听&ndash;&gt;-->
+<div id="tp-weather-widget" class="xc"></div>
+<div id="rili"></div>
 
     <!--<div>
          <nav class="navbar  navbar-expand-sm bg-white navbar-light" role="tablelist"id="timetable">
@@ -216,7 +142,6 @@
             </ul>
         </nav>
     </div>
-
 <div class="tab-content">
     <div class="container tab-pane"id="monday">
         <p>1</p>
@@ -239,77 +164,32 @@
     <div class="container tab-pane"id="sunday">
         <p>7</p>
     </div>
-</div>&lt;!&ndash;下拉跳转&ndash;&gt;-->
-<div>
-    <table id="my_table_id"
-           data-url="data/url.json"
-           data-id-field="id"
-           data-show-jumpto="true">
-        <thead>
-        <tr>
-            <th class="col-md-1" data-field="id" data-sortable="true" data-align="center"></th>
-            <th class="col-md-4" data-field="name" data-editable="true"></th>
-            <th class="col-md-7" data-field="description" data-editable="true" data-editable-emptytext="Custom empty text."></th>
-        </tr>
-        </thead>
-    </table>
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="">上一页</a></li>
-        <li class="page-item"><a class="page-link" href="">1</a></li>
-        <li class="page-item"><a class="page-link" href="">2</a></li>
-        <li class="page-item"><a class="page-link" href="">3</a></li>
-        <li class="page-item"><a class="page-link" href="">...</a></li>
-        <li class="page-item"><a class="page-link" href="">下一页</a></li>
-        <li class="page-item"><input type="text" id="txt"><button type="button">跳转</button></li>
-    </ul>
-</div><!--分页-->
-</body>
+</div>-->
+<script type="text/javascript" src="assets/js/b.js"></script>
 <script>
-   /* $(document).ready(function(){
-        $(document).off('click.bs.dropdown.data-api');
-    });*/
-  /*  $(document).ready(function(){
-        dropdownOpen();
-    });*/
- /*$(function () {
-        $(".dropdown").mouseover(function () {
-            $(this).addClass("open");
-        });
-
-        $(".dropdown").mouseleave(function(){
-            $(this).removeClass("open");
-        })
-    })*/
-
-   /* function dropdownOpen() {
-
-        var $dropdownLi = $('li.dropdown');
-
-        $dropdownLi.mouseover(function() {
-            $(this).addClass('open');
-        }).mouseout(function() {
-            $(this).removeClass('open');
-        });
-    }*/
-
-    $("#btn").click(function(){
-        var u=$("#user").val();
-        var p=$("#pwd").val();
-        if(isEmpty(u)){
-            $("#msg").html("账号不能为空");
-            return;
+    b.openZDdiy({
+        width: 300,//整个控件宽度
+        itemheight: 40,//每行日期的高度
+        daytextsize: 16,//日期的文字大小
+        id: "rili",//设置的布局
+        selectimg: 'assets/images/zmcselect.png',//选中的背景图
+        leftimg: 'assets/images/zmcleft.png',//上个月背景图
+        rightimg: 'assets/images/zmcright.png',//下个月背景图
+        mainbac: '#FAFFF9',//整体背景色
+        titlebac: '#FDE102',//头部背景色
+        isfromtoday: true,//当天之前的是否不可以点击
+        datelong: 7,//最长可以选择几天
+        daterange: function(timearray, start, stop){
+            console.log(JSON.stringify(timearray) + "==" + start + "==" + stop);//如果超过了7天的话 返回的都是false
         }
-        if(isEmpty(p)){
-            $("#msg").html("密码不能为空");
-            return;
-        }
-        $("#form").submit();
-
     });
-    function isEmpty(s){
-        if(s==null||s.trim()=="")
-            return true;
-        return false;
-    }
 </script>
+<!-- weather -->
+<script type="text/javascript">
+    WIDGET = {FID: '384AJFIELe'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+</body>
+
+
 </html>
